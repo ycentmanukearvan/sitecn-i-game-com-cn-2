@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ycentmanukearvan.github.io/sitecn-i-game-com-cn-2/sitemap.xml

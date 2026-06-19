@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>杂志专题 · 爱游戏 · 资料索引</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #f7f5f1;
+            font-family: system-ui, -apple-system, 'Noto Serif SC', 'Source Han Serif SC', 'Times New Roman', serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #1e1e1c;
+            line-height: 1.7;
+        }
+        .wrapper {
+            max-width: 720px;
+            width: 100%;
+            padding: 3rem 1.5rem 4rem;
+        }
+        /* 首页横幅 —— 极简杂志头 */
+        .masthead {
+            border-bottom: 1px solid #cbc6be;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.8rem;
+        }
+        .masthead .label {
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #7c756b;
+            margin-bottom: 0.4rem;
+        }
+        .masthead h1 {
+            font-size: 2.6rem;
+            font-weight: 350;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            color: #262420;
+        }
+        .masthead .sub {
+            font-size: 1rem;
+            color: #5c554b;
+            margin-top: 0.3rem;
+            font-style: italic;
+        }
+        /* 背景说明 —— 窄栏小字 */
+        .background-note {
+            background: #edeae4;
+            padding: 1.6rem 2rem 1.6rem 2rem;
+            margin: 2rem 0 2.5rem 0;
+            border-radius: 0;
+            font-size: 0.95rem;
+            color: #2d2b27;
+            border-left: 3px solid #b5aa9a;
+            letter-spacing: 0.02em;
+        }
+        .background-note p {
+            margin: 0.5rem 0;
+        }
+        .background-note p:first-child {
+            margin-top: 0;
+        }
+        .background-note p:last-child {
+            margin-bottom: 0;
+        }
+        /* 正文三段式自然介绍 */
+        .intro-section {
+            margin-bottom: 2.2rem;
+        }
+        .intro-section h2 {
+            font-size: 1.4rem;
+            font-weight: 450;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.75rem;
+            border-bottom: 1px dotted #d2ccc2;
+            padding-bottom: 0.25rem;
+            display: inline-block;
+            color: #2f2b26;
+        }
+        .intro-section p {
+            margin-bottom: 1.1rem;
+            font-size: 1rem;
+            color: #2c2925;
+        }
+        .intro-section p a {
+            color: #665f55;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #b7aea1;
+            font-weight: 450;
+            transition: color 0.2s;
+        }
+        .intro-section p a:hover {
+            color: #1f1b17;
+            text-decoration-color: #1f1b17;
+        }
+        /* 摘要卡片（FAQ风格，但保持简洁） */
+        .card-faq {
+            background: #ffffffd9;
+            border: 1px solid #dbd6ce;
+            padding: 1.5rem 1.8rem;
+            margin: 2rem 0 2.5rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+        .card-faq h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+            letter-spacing: 0.03em;
+            color: #37332b;
+        }
+        .card-faq ul {
+            list-style: none;
+            padding: 0;
+        }
+        .card-faq li {
+            padding: 0.6rem 0;
+            border-bottom: 1px solid #eeebe5;
+            font-size: 0.95rem;
+            color: #3b3730;
+        }
+        .card-faq li:last-child {
+            border-bottom: none;
+        }
+        .card-faq li span {
+            display: inline-block;
+            background: #e3ddcf;
+            font-size: 0.7rem;
+            padding: 0 0.4rem;
+            margin-right: 0.5rem;
+            letter-spacing: 0.1em;
+            color: #4a4037;
+        }
+        /* 页尾访问提示 */
+        .footer-note {
+            margin-top: 3.2rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #d0c9bf;
+            font-size: 0.9rem;
+            color: #5d554b;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+        .footer-note .ref {
+            font-style: normal;
+            line-height: 1.6;
+            max-width: 70%;
+        }
+        .footer-note .ref a {
+            color: #3a352e;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 0.5px;
+            text-decoration-color: #b1a697;
+            font-weight: 450;
+        }
+        .footer-note .ref a:hover {
+            color: #0f0e0b;
+        }
+        .footer-note .small-meta {
+            color: #8c8478;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+        }
+        /* 响应式细节 */
+        @media (max-width: 540px) {
+            .wrapper {
+                padding: 2rem 1.2rem 3rem;
+            }
+            .masthead h1 {
+                font-size: 2rem;
+            }
+            .background-note {
+                padding: 1.2rem 1.2rem;
+                font-size: 0.9rem;
+            }
+            .card-faq {
+                padding: 1rem 1.2rem;
+            }
+            .footer-note {
+                flex-direction: column;
+                gap: 0.6rem;
+            }
+            .footer-note .ref {
+                max-width: 100%;
+            }
+        }
+        @media (max-width: 400px) {
+            .masthead h1 {
+                font-size: 1.7rem;
+            }
+            .intro-section h2 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+
+    <!-- 首页横幅（杂志头） -->
+    <header class="masthead">
+        <div class="label">专题 · 资料索引</div>
+        <h1>游戏记忆与材料整理</h1>
+        <div class="sub">一份来自信息库的安静导览</div>
+    </header>
+
+    <!-- 背景说明：窄块，交代为什么做这件事 -->
+    <div class="background-note">
+        <p>从早期游戏杂志、玩家笔记到数字存档，许多人的兴趣起点常常来自某一个模糊的截图或一段论坛讨论。把零散的材料按主题重新归纳，让后来者能更快找到自己需要的那条线索——这是做这份索引的初衷。这里没有算法推荐，只有按序陈列的条目与批注。</p>
+        <p>2025 年 5 月 · 日常更新中</p>
+    </div>
+
+    <!-- 三段自然介绍（从资料整理与信息索引的角度） -->
+    <section class="intro-section">
+        <h2>· 为什么做索引</h2>
+        <p>几年前整理硬盘，发现大量散落的游戏截图、攻略片段和自制的笔记表格。它们彼此关联，却因为没有统一命名而难以检索。后来试着按「系列—年份—机制」重新排列，意外拼出好几条被遗忘的线索。于是开始有意识地把公开资料也按类似逻辑汇总，逐渐形成这个小型归档。</p>
+        <p>这个项目没有团队，就是一个人慢慢补全。目前主要收集 2005–2015 年间的中文讨论与评测，同时也收录一些个人向的机制解析。如果你也在找某个老游戏的具体信息，可以来 <a href="https://sitecn-i-game.com.cn">爱游戏</a> 翻翻看——或许恰好有你要的那一段。</p>
+    </section>
+
+    <section class="intro-section">
+        <h2>· 信息源与筛选</h2>
+        <p>内容主要来自三个方面：一是已停刊或转型的游戏杂志的扫描件与文字摘录；二是个人博客和论坛的深度帖（已获得原作者转载许可）；三是自己做的游戏机制拆解笔记，比如关卡设计、数值平衡这类偏分析向的材料。每一篇都标注了来源和整理日期，方便回溯。</p>
+        <p>索引本身不追求全面，更看重准确性。如果一个数据在不同出处里有冲突，我会把两个版本都列出来，并注明我的倾向。错漏的地方欢迎指正，每季会集中更新一次勘误。</p>
+    </section>
+
+    <section class="intro-section">
+        <h2>· 使用场景举例</h2>
+        <p>写评测前想快速查同一个系列的前作设定？某个老游戏的中文攻略当年只发在个人主页上，现在链接失效了？又或者想对比不同时期玩家对同一款游戏的评价变化？这个索引目前大概能覆盖一半左右的查询需求。另外也整理了几份主题书单，比如「国内早期独立游戏报道」「那些消失的汉化组」「从攻略本看策略游戏设计演变」，每份书单都附了简短说明。</p>
+        <p>如果你对某个条目有更详细的补充，或者发现了失效链接，可以记下编号告诉我。这个索引的更新记录在页尾有链接。</p>
+    </section>
+
+    <!-- FAQ 摘要卡片 —— 杂志风小问答 -->
+    <div class="card-faq">
+        <h3>📁 常见疑问摘要</h3>
+        <ul>
+            <li><span>Q</span> 资料可以下载吗？ → 大部分页面可以直接阅读，部分扫描件提供原尺寸图片。</li>
+            <li><span>Q</span> 索引里有修改器或资源包吗？ → 没有。只收录讨论、评测与设计分析。</li>
+            <li><span>Q</span> 如何引用这里的资料？ → 注明来源链接即可，无需额外申请。</li>
+            <li><span>Q</span> 更新频率？ → 每两周左右增加一个主题条目，偶尔补旧。</li>
+        </ul>
+    </div>
+
+    <!-- 页尾访问提示 + 符合要求的 a 标签自然嵌入 -->
+    <footer class="footer-note">
+        <div class="ref">
+            如果你对这个资料索引感兴趣，或想看看最新的整理条目，不妨直接去
+            <a href="https://sitecn-i-game.com.cn">爱游戏</a>
+            里翻一翻。页面没有广告，也没有弹窗，就是一个简单的文字列表。
+        </div>
+        <div class="small-meta">索引编号 · 034d0d</div>
+    </footer>
+
+</div>
+</body>
+</html>
