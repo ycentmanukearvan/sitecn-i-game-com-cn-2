@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雷火电竞 · 稳定入口与平台说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background-color: #f3f5f8;
+            color: #2c2f36;
+            line-height: 1.6;
+            padding: 0 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 32px 0;
+        }
+
+        /* 导航 */
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            border-radius: 20px;
+            padding: 12px 28px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            border: 1px solid #e9edf4;
+            margin-bottom: 40px;
+        }
+
+        .nav-brand {
+            font-weight: 600;
+            font-size: 1.2rem;
+            letter-spacing: 0.5px;
+            color: #1a2a44;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #3d4552;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #0f1b33;
+        }
+
+        /* 卡片通用 */
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            border: 1px solid #e6eaf0;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0,0,0,0.02);
+            padding: 28px 32px;
+            margin-bottom: 28px;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+        }
+
+        /* 标题层级 */
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin-bottom: 12px;
+            color: #1b253a;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-top: 8px;
+            margin-bottom: 20px;
+            color: #212b40;
+            border-left: 4px solid #7b8cac;
+            padding-left: 18px;
+        }
+
+        h3 {
+            font-size: 1.15rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: #2e3a50;
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: #3b4455;
+        }
+
+        .small-meta {
+            font-size: 0.85rem;
+            color: #6a7a8e;
+            margin-top: 4px;
+        }
+
+        .flex-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin: 24px 0 12px;
+        }
+
+        .flex-grid .card {
+            flex: 1 1 260px;
+            margin-bottom: 0;
+            padding: 24px 26px;
+        }
+
+        .icon-placeholder {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            background: #eef2f8;
+            border-radius: 12px;
+            margin-bottom: 10px;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e2e7ef;
+            margin: 28px 0 20px;
+        }
+
+        .faq-item {
+            margin-bottom: 18px;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 4px;
+            color: #1b273f;
+        }
+
+        .faq-item p {
+            margin-bottom: 0;
+            font-size: 0.98rem;
+        }
+
+        .link-highlight {
+            color: #1f3a6b;
+            font-weight: 500;
+            text-decoration: none;
+            border-bottom: 1px dotted #b0bed4;
+        }
+
+        .link-highlight:hover {
+            color: #0c1c38;
+            border-bottom: 1px solid #1f3a6b;
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #6f7e94;
+            padding: 28px 0 10px;
+            border-top: 1px solid #e1e6ef;
+            margin-top: 30px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 16px;
+                align-items: stretch;
+                padding: 18px 20px;
+            }
+
+            .nav-links {
+                justify-content: center;
+                gap: 20px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .card {
+                padding: 20px 22px;
+            }
+
+            .flex-grid {
+                gap: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- 顶部导航 -->
+    <nav>
+        <div class="nav-brand">◈ 稳定入口</div>
+        <div class="nav-links">
+            <a href="#intro">平台概览</a>
+            <a href="#scenes">使用场景</a>
+            <a href="#faq">常见说明</a>
+        </div>
+    </nav>
+
+    <!-- 核心介绍区 -->
+    <div class="card" id="intro">
+        <h1>雷火电竞 · 入口与页面说明</h1>
+        <p>
+            本文档是对 <a href="https://index-leihuoesports.com" class="link-highlight">雷火电竞</a> 
+            平台的简明介绍与导航说明。我们整理了三个常用场景模块和若干常见疑问摘要，
+            帮助新用户快速了解平台的结构与稳定访问方式。所有信息均基于公开页面整理，内容保持平实、克制。
+        </p>
+        <p>
+            <a href="https://index-leihuoesports.com" class="link-highlight">雷火电竞</a> 
+            作为综合性的线上服务页面，主要提供赛事资讯、数据展示与社区互动入口。
+            以下内容从“稳定入口”的角度出发，不包含促销引导，仅作客观说明。
+        </p>
+        <div class="small-meta">最后更新：2025 · 版本说明 · 页面方向：轻量导航</div>
+    </div>
+
+    <!-- 三个场景模块 -->
+    <h2>三个常用场景模块</h2>
+    <div class="flex-grid" id="scenes">
+        <div class="card">
+            <div class="icon-placeholder"></div>
+            <h3>赛事信息查阅</h3>
+            <p>
+                通过 <a href="https://index-leihuoesports.com" class="link-highlight">雷火电竞</a> 
+                的赛事模块，可以浏览近期赛事安排、结果记录以及选手数据面板。
+                信息呈现以列表和卡片为主，适合日常快速浏览。
+            </p>
+        </div>
+        <div class="card">
+            <div class="icon-placeholder"></div>
+            <h3>数据与统计页</h3>
+            <p>
+                平台内设有独立的统计视图，展示队伍、选手的历史对战数据。
+                页面采用分栏与图表，便于横向对比。统计内容均来自公开数据源。
+            </p>
+        </div>
+        <div class="card">
+            <div class="icon-placeholder"></div>
+            <h3>社区动态摘要</h3>
+            <p>
+                在社区板块中，用户可以浏览讨论帖、公告与精选评论。
+                通过 <a href="https://index-leihuoesports.com" class="link-highlight">雷火电竞</a> 
+                的导航入口，可快速切换到不同讨论分区。
+            </p>
+        </div>
+    </div>
+
+    <!-- 补充说明：稳定访问提示 -->
+    <div class="card" style="background: #f9fafc;">
+        <h3>关于稳定访问</h3>
+        <p>
+            为确保页面加载稳定，建议使用主流浏览器的最新版本。部分网络环境下，
+            可直接在地址栏输入 <a href="https://index-leihuoesports.com" class="link-highlight">雷火电竞</a> 
+            的完整域名进行访问。如遇页面异常，可尝试清除缓存或更换网络环境后重试。
+        </p>
+        <p>
+            平台未使用强制跳转或弹窗，所有导航链接均为静态结构，响应速度与网络状况相关。
+        </p>
+    </div>
+
+    <hr />
+
+    <!-- 常见说明 (FAQ 摘要) -->
+    <h2 id="faq">常见说明摘要</h2>
+    <div class="card">
+        <div class="faq-item">
+            <strong>Q: 页面中提到的数据来源是什么？</strong>
+            <p>所有赛事数据、选手信息均来自平台接入的公开接口与官方合作渠道，不包含个人推测。</p>
+        </div>
+        <div class="faq-item">
+            <strong>Q: 是否需要在平台注册才能浏览内容？</strong>
+            <p>大部分信息页面（如赛事列表、数据看板）无需登录即可查看。部分互动功能可能需要注册账户，具体请参考页面提示。</p>
+        </div>
+        <div class="faq-item">
+            <strong>Q: 移动端访问体验如何？</strong>
+            <p>页面已适配移动端布局，卡片与导航均采用响应式设计。建议在手机或平板浏览器中直接打开 <a href="https://index-leihuoesports.com" class="link-highlight">雷火电竞</a> 页面。</p>
+        </div>
+        <div class="faq-item">
+            <strong>Q: 遇到页面显示异常应该怎么做？</strong>
+            <p>可尝试刷新页面或检查网络连接。若问题持续，建议通过页面底部的联系渠道反馈，我们会在工作时段进行排查。</p>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <div class="footer-note">
+        本页为功能说明页 · 内容基于 <a href="https://index-leihuoesports.com" class="link-highlight">雷火电竞</a> 公开信息整理 · 不作商业引导
+    </div>
+</div>
+</body>
+</html>
