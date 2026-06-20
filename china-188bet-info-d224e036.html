@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>188bet 站点介绍与可信说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #ffe6c7 0%, #ffd9b3 40%, #fccf9a 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1.2rem;
+            line-height: 1.6;
+            color: #3a2c1d;
+        }
+
+        .page-wrapper {
+            max-width: 1100px;
+            width: 100%;
+            background: rgba(255, 250, 240, 0.65);
+            backdrop-filter: blur(4px);
+            border-radius: 48px 48px 32px 32px;
+            padding: 2.8rem 1.8rem;
+            box-shadow: 0 20px 40px -12px rgba(120, 70, 30, 0.25);
+        }
+
+        /* hero 区 */
+        .hero {
+            text-align: center;
+            padding: 1.2rem 0.5rem 2.5rem;
+            border-bottom: 2px dashed rgba(200, 140, 80, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #5e3a1f;
+            text-shadow: 0 3px 6px rgba(190, 120, 50, 0.15);
+            margin-bottom: 0.8rem;
+        }
+
+        .hero .sub {
+            font-size: 1.2rem;
+            color: #7c5e3f;
+            background: rgba(255, 235, 210, 0.7);
+            display: inline-block;
+            padding: 0.5rem 1.8rem;
+            border-radius: 50px;
+            backdrop-filter: blur(2px);
+            margin-top: 0.2rem;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 1.2rem auto 0;
+            font-size: 1.05rem;
+            color: #4d3822;
+        }
+
+        /* 卡片风格区 */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 1.8rem;
+            margin: 2.5rem 0;
+        }
+
+        .card {
+            background: #ffffffea;
+            backdrop-filter: blur(3px);
+            border-radius: 28px;
+            padding: 1.6rem 1.4rem;
+            box-shadow: 0 12px 24px -10px rgba(130, 80, 30, 0.12);
+            border: 1px solid rgba(255, 215, 160, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 32px -12px rgba(150, 90, 35, 0.2);
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #67462a;
+            border-left: 5px solid #e6a86b;
+            padding-left: 0.7rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .card p {
+            font-size: 0.98rem;
+            color: #4b3a2a;
+        }
+
+        /* 说明区（融合介绍与可信） */
+        .explain-section {
+            background: #fcf6ee;
+            border-radius: 32px;
+            padding: 2rem 2.2rem;
+            margin-top: 1.5rem;
+            box-shadow: inset 0 2px 8px rgba(180, 120, 60, 0.08);
+            border: 1px solid #f0dcc8;
+        }
+
+        .explain-section h2 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: #5c3f28;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .explain-section h2::before {
+            content: "📋";
+            font-size: 1.6rem;
+            margin-right: 0.2rem;
+        }
+
+        .explain-section p {
+            margin-bottom: 1rem;
+            font-size: 1.02rem;
+        }
+
+        .explain-section a {
+            color: #b56f3a;
+            font-weight: 500;
+            text-decoration: none;
+            background: linear-gradient(to right, #f6dabc, #f6dabc);
+            background-size: 0% 3px;
+            background-repeat: no-repeat;
+            background-position: left bottom;
+            transition: background-size 0.25s;
+            padding: 0.1rem 0.2rem;
+            border-radius: 6px;
+        }
+
+        .explain-section a:hover {
+            background-size: 100% 3px;
+            background-color: #fae3cc;
+        }
+
+        /* FAQ 摘要 */
+        .faq-summary {
+            background: #fffcf5;
+            border-radius: 28px;
+            padding: 1.6rem 1.8rem;
+            margin: 2.2rem 0 1.5rem;
+            border: 1px solid #edd6bd;
+        }
+
+        .faq-summary h3 {
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: #5d3f27;
+            margin-bottom: 1rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1.2rem;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 600;
+            color: #7a532f;
+            margin-bottom: 0.3rem;
+            font-size: 1.05rem;
+        }
+
+        .faq-item p {
+            margin-left: 0.5rem;
+            color: #4d3c2b;
+            font-size: 0.98rem;
+        }
+
+        .faq-item:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 底部链接区 */
+        .footer-links {
+            margin-top: 2rem;
+            padding-top: 1.8rem;
+            border-top: 2px solid #e7cdb0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .footer-links p {
+            color: #5b442e;
+            font-size: 0.98rem;
+        }
+
+        .footer-links a {
+            display: inline-block;
+            background: #f5e6d4;
+            color: #482f1c;
+            padding: 0.4rem 1.6rem;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            border: 1px solid #dbbc9a;
+            box-shadow: 0 3px 6px rgba(140, 90, 40, 0.05);
+            transition: background 0.2s, transform 0.1s;
+        }
+
+        .footer-links a:hover {
+            background: #ebd3bb;
+            transform: scale(1.02);
+            border-color: #c9a47b;
+        }
+
+        .footer-links .small-note {
+            font-size: 0.86rem;
+            color: #7e684f;
+            max-width: 520px;
+        }
+
+        /* 响应式细节 */
+        @media (max-width: 680px) {
+            .page-wrapper {
+                padding: 1.6rem 1rem;
+                border-radius: 32px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .sub {
+                font-size: 1rem;
+                padding: 0.3rem 1.2rem;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .explain-section {
+                padding: 1.4rem 1rem;
+            }
+
+            .faq-summary {
+                padding: 1.2rem 1rem;
+            }
+
+            .footer-links a {
+                padding: 0.3rem 1.2rem;
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .card h3 {
+                font-size: 1.2rem;
+            }
+
+            .explain-section h2 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- hero 区 -->
+        <div class="hero">
+            <h1>188bet · 站点介绍</h1>
+            <span class="sub">面向使用者的可信说明页</span>
+            <p>这里是关于 <a href="https://china-188bet.com" style="color:#7b4f2e; background:none; padding:0; text-decoration:underline; text-underline-offset:4px;">188bet</a> 的综合介绍，我们从站点定位、内容特点以及常见疑问等角度整理了一份简明参考。</p>
+        </div>
+
+        <!-- 优势区 (卡片) -->
+        <div class="cards-grid">
+            <div class="card">
+                <h3>信息透明</h3>
+                <p>围绕平台概况、功能指引以及相关说明进行梳理，不夸大不虚构，帮助使用者快速了解基础信息。</p>
+            </div>
+            <div class="card">
+                <h3>内容聚焦</h3>
+                <p>页面主要面向对 188bet 感兴趣的浏览者，提供结构化的介绍和常见问题摘要，减少信息冗余。</p>
+            </div>
+            <div class="card">
+                <h3>长期维护</h3>
+                <p>介绍内容会随站点变化定期核对更新，尽力保证描述与实际体验一致，避免过时或不准确。</p>
+            </div>
+            <div class="card">
+                <h3>用户视角</h3>
+                <p>从实际使用场景出发，梳理功能分区、可用性提示以及实用细节，方便快速建立认知。</p>
+            </div>
+        </div>
+
+        <!-- 说明区：站点介绍与可信说明 -->
+        <div class="explain-section">
+            <h2>站点介绍与可信说明</h2>
+            <p><strong>188bet</strong> 是一个提供多种在线娱乐与资讯服务的平台，其界面设计注重简洁与分类清晰，使用者可以通过导航快速定位不同版块。我们在此页面整理的内容均基于公开信息与客观描述，不涉及诱导或承诺。</p>
+            <p>关于可信性方面：任何线上服务都建议使用者自行核实网站资质与安全证书。本页面旨在提供一份结构化的参考，不代替官方公告或法律文件。如果你希望直接访问该网站，可以记住下述地址：<a href="https://china-188bet.com">188bet</a> （建议通过官方渠道再次确认最新域名）。</p>
+            <p>我们强调：实际体验可能因地区、网络环境或设备不同而有所差异。使用前请仔细阅读平台相关条款与隐私政策，根据自身情况做出判断。</p>
+        </div>
+
+        <!-- FAQ 摘要 -->
+        <div class="faq-summary">
+            <h3>💬 常见疑问摘要</h3>
+            <div class="faq-item">
+                <strong>▸ 这个页面是 188bet 的官网吗？</strong>
+                <p>本页面是独立的介绍页，非官方网站。我们推荐你直接访问 <a href="https://china-188bet.com">188bet</a> 以获取最准确的信息。</p>
+            </div>
+            <div class="faq-item">
+                <strong>▸ 内容多久更新一次？</strong>
+                <p>我们会定期根据公开变化进行内容复核，但无法保证实时同步。重要信息请以站内公告或官方说明为准。</p>
+            </div>
+            <div class="faq-item">
+                <strong>▸ 是否提供下载或注册引导？</strong>
+                <p>本页面仅做信息展示，不直接提供下载、注册或跳转功能。所有操作都建议通过 <a href="https://china-188bet.com">188bet</a> 自身界面完成。</p>
+            </div>
+        </div>
+
+        <!-- 底部链接区 -->
+        <div class="footer-links">
+            <p>如果你希望了解更多，可以直接访问 →</p>
+            <a href="https://china-188bet.com">188bet</a>
+            <span class="small-note">本介绍页与 188bet 无直接隶属关系，内容仅供参考，请自行核实。</span>
+        </div>
+    </div>
+</body>
+</html>
